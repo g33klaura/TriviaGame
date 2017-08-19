@@ -1,6 +1,39 @@
 /*font-family: 'Saira Semi Condensed', sans-serif;*/
 
-html {
+body {
 	background: url("../images/horsehead-nebula.jpg") no-repeat center center fixed;
 	background-size: cover;
+}
+
+.col-md-12 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	position: relative;
+	top: 100px;
+}
+
+#game-contents {
+	background-color: rgba(67, 10, 45, 0.4);
+	padding: 40px;
+	margin-top: 40px;
+}
+
+h1 {
+	font-family: 'Saira Semi Condensed', sans-serif;
+	font-size: 48px;
+	font-weight: 800;
+	text-align: center;
+	color: White;
+	position: relative;
+	/*top: 50px;*/
+}
+
+p {
+	font-family: 'Saira Semi Condensed', sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	color: #FFB3E1;
+	/*color: 255, 179, 225, 0.5;*/
 }
