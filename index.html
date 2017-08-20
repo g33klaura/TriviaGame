@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<main class="container">
-		<!-- Game Title -->
+		<!-- Game Title happily in it's own row with one column 12-->
 		<section class="row">
 			<div class="col-md-12">
 				<h1 id="title">Super Sci-fi Cinema Trivia!</h1>
@@ -19,24 +19,39 @@
 		</section>
 
 		<!-- Game Divs -->
-		<!-- Top Row, Single column of 12 -->
+		<!-- Need an even HIGHER LEVEL top row! Include both of these rows w/ column 12 -->
 		<section class="row">
 			<div class="col-md-12">
-				<div class="game-contents">
-					<p>The game contents will go here!!</p>
-				</div>
-			</div>
-		</section>
-		<!-- Second Row, Single column of 12 -->
-		<!-- Not sure if I want this, but building it now so it's less confusing to do later... -->
-		<section class="row">
-			<div class="col-md-12">
-				<div class="game-contents">
-				<!-- empty -->
-				</div>
+
+		<!-- First Row, Single column of 12 -->
+				<section class="row">
+					<div class="col-md-12">
+						<div class="game-contents">
+							<!-- Have questions go here? -->
+							<p>The game contents will go here!!</p>
+						</div>
+					</div>
+				<!-- </section> -->
+		
+		<!-- Second Row, Single column 12 -->
+		<!-- If I make these each in a separate row, they go next to each other, but in one row has a space between...... -->
+		<!-- ^^SOLUTION: Remove margin-top in css -->
+				<!-- <section class="row"> -->
+					<div class="col-md-12">
+						<div class="game-contents">
+							<!-- Have answer buttons go here? -->
+							<button id="game-start">Start the game!</button>
+						</div>
+					</div>
+				</section>
+
 			</div>
 		</section>
 
+
+
+
+		<!-- Closing tag for full content container -->
 		</main>
 
 		<!-- SCRIPT LINKS BELOW -->
