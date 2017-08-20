@@ -18,7 +18,7 @@ body {
 .game-contents {
 	background-color: rgba(67, 10, 45, 0.4);
 	padding: 40px;
-	margin-top: 40px;
+	/*margin-top: 40px;*/
 	width: 100%;
 	display: flex;
 	justify-content: center;
