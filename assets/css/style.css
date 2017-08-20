@@ -8,16 +8,22 @@ body {
 .col-md-12 {
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	align-content: center;
+	/*align-items: center;*/
+	/*align-content: center;*/
 	position: relative;
 	top: 100px;
 }
 
-#game-contents {
+/* Good job relabelling this a class from id so both areas have styling ;) */
+.game-contents {
 	background-color: rgba(67, 10, 45, 0.4);
 	padding: 40px;
 	margin-top: 40px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	/*align-items: center;*/
+	/*align-content: center;*/
 }
 
 h1 {
