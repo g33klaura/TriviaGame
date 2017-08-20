@@ -9,7 +9,7 @@
 var trivia = {
     q1: ["In movie adaptation of The Hitchhiker\’s Guide to the Galaxy, who voiced Marvin the robot?", "Alan Rickman", "Alan Alda", "Alan Tudyk", "Alan Cumming"],
     q2: ["Which member of Monty Python wrote and directed Brazil?", "Terry Gilliam", "John Cleese", "Graham Chapman", "Eric Idle"],
-    q3: ["Who played the villainous King Koopa in Super Mario Bros.?", "Dennis Hopper", "Dennis Leary", "Dennis Quaid", "Dennis Farina"],
+    q3: ["Who played the reptilian villain, King Koopa, in Super Mario Bros.?", "Dennis Hopper", "Dennis Leary", "Dennis Quaid", "Dennis Farina"],
     q4: ["In Prometheus, who are the scientists in the crew searching for?", "The Engineers", "The Mechanics", "The Lumineers", "The Xenomorphs"],
     q5: ["Who starred as engineer Dr. William Weir in Event Horizon?", "Sam Neill", "Sam Rami", "Sam Elliott", "Sam Rockwell"],
     q6: ["What 80s pop star played the blood-thirsty Aunty Entity in Mad Max Beyond Thunderdome?", "Tina Turner", "Janet Jackson", "Vanessa Williams", "Gloria Estefan"],
@@ -73,12 +73,12 @@ renderQuestion();
 
 // This code makes sure the JS doesn't run until the HTML is finished loading
 // How much of the process does this block need to contain?****
-$(document).ready(function) {
+$(document).ready(function() {
 
 // When do question/answer buttons render????
 
 // When the player presses the Start button, it will run the following function
-	$("#start-button").on("click", function() { 
+	$("#game-start").on("click", function() { 
     // then .remove to take off the page when game starts?****
     console.log("Start button was clicked");
     });
@@ -108,7 +108,7 @@ $(document).ready(function) {
     triviaIndex++;
     renderQuestion();
 
-};
+});
 
 
 // After a set amount of time, the next question and answer set will appear
