@@ -32,13 +32,16 @@ var triviaArray = [trivia.q1, trivia.q2, trivia.q3, trivia.q4, trivia.q5, trivia
 
 // console.log(triviaArray);
 
+// Empty variable to hold player's guess
+// Set to number?? Set to what?....
+var playerGuess = 0;
+
 
 // Testing question
-console.log(trivia.q3[0]);
+// console.log(trivia.q4[0]);
 // Testing answers retrieval
-console.log(trivia.q3[1]);
-// console.log(triviaArray[3][1]);
-// Looks like either of these methods work....
+// console.log(trivia.q4[1]);
+// [1] is always right answer. Thus need these to populate randomly in buttons....
 
 
 
@@ -50,14 +53,31 @@ console.log(trivia.q3[1]);
 // Function to loop through trivia questions
 // and display each possible answer in RANDOM order
 
+
+// ****Still needs work!!!!!!!!!!
+// Nothing populates questions/answers. Start in console!
 function renderQuestion() {
-    if (triviaIndex <= (triviaArray.length - 1)) {
+
+	// $("#qna").add().addClass("widget").appendTo(document.body);
+	
+	// for (triviaIndex = 0; triviaIndex < triviaArray.length; triviaIndex++) {
+
+	// for (triviaIndex = 0; triviaIndex < trivia.length; triviaIndex++) {
+
+
+    	if (triviaIndex <= (triviaArray.length - 1)) {
         // Display question and answers
-        console.log("Next question");
-    } else {
+        	console.log(triviaArray[triviaIndex][0]);
+        	// console.log("Next question");
+   		
+   		} else {
         // If no more questions, render game end screen with scores
-        console.log("Game over");
-    }
+        	console.log("Game over");
+        	// Show score totals
+    	}
+
+	// }
+
 }
 
 // ^^^^Should this function have the timer mechanism to not load immediately on function call??
@@ -69,27 +89,53 @@ function renderQuestion() {
 /* MAIN PROCESS =========================================
  */
 
-renderQuestion();
+
 
 // This code makes sure the JS doesn't run until the HTML is finished loading
 // How much of the process does this block need to contain?****
 $(document).ready(function() {
 
-// When do question/answer buttons render????
+	$(".answers").hide();
 
-// When the player presses the Start button, it will run the following function
+// When the player clicks the start button, it will run the following function to hide the start button and show the question/answer buttons
 	$("#game-start").on("click", function() { 
-    // then .remove to take off the page when game starts?****
+    
     console.log("Start button was clicked");
+
+    // then .hide to take off the page when game starts
+    // Not working on deployed GithubPages site tho..........
+    $("#game-start").hide();
+
+    $(".answers").show();
+
+    // Call a function to start rendering questions??
+    // renderQuestion();
     });
 
+
+// After start is clicked, the game begins
+
+// The first question with buttons for 4 possible answers needs to render, along with a timer for answering just this question*********
+
+// For loop? Do/while loop?
+// playerGuess part needs to be linked where "this" is
+
+
+
+
+
+// THIS ISN'T LINKED TO ANYTHING YET, JUST PUZZLE PIECE
     // If there are no more questions, stop the function
     if (triviaIndex === triviaArray.length) {
         return;
     }
 
     // Determine which answer button was selected****
-    var playerGuess = "";
+    // What should this consist of??
+    // Something that captures which button is pressed????
+    // "value" related to the button value!!
+    playerGuess = $(this).attr("value");
+    console.log("You chose: " + playerGuess);
 
     // After each answer is selected, a screen displays telling user if correct,
     if (playerGuess === triviaArray[triviaIndex][1]) {
