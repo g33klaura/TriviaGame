@@ -21,37 +21,37 @@ var trivia = {
 };
 */
 
-// edit this one
+// try this one instead
 var trivia = {
 
-    q1: ["In movie adaptation of The Hitchhiker\’s Guide to the Galaxy, who voiced Marvin the robot?"],
+    q1: "In movie adaptation of The Hitchhiker\’s Guide to the Galaxy, who voiced Marvin the robot?",
     q1a: ["Alan Rickman", "Alan Alda", "Alan Tudyk", "Alan Cumming"],
     
-    q2: ["Which member of Monty Python wrote and directed Brazil?"],
+    q2: "Which member of Monty Python wrote and directed Brazil?",
     q2a: ["Terry Gilliam", "John Cleese", "Graham Chapman", "Eric Idle"],
 
-    q3: ["Who played the reptilian villain, King Koopa, in Super Mario Bros.?"],
+    q3: "Who played the reptilian villain, King Koopa, in Super Mario Bros.?",
     q3a: ["Dennis Hopper", "Dennis Leary", "Dennis Quaid", "Dennis Farina"],
 
-    q4: ["In Prometheus, who are the scientists in the crew searching for?"],
+    q4: "In Prometheus, who are the scientists in the crew searching for?",
     q4a: ["The Engineers", "The Mechanics", "The Lumineers", "The Xenomorphs"],
 
-    q5: ["Who starred as engineer Dr. William Weir in Event Horizon?"],
+    q5: "Who starred as engineer Dr. William Weir in Event Horizon?",
     q5a: ["Sam Neill", "Sam Rami", "Sam Elliott", "Sam Rockwell"],
 
-    q6: ["What 80s pop star played the blood-thirsty Aunty Entity in Mad Max Beyond Thunderdome?"],
+    q6: "What 80s pop star played the blood-thirsty Aunty Entity in Mad Max Beyond Thunderdome?",
     q6a: ["Tina Turner", "Janet Jackson", "Vanessa Williams", "Gloria Estefan"],
 
-    q7: ["Jeff Bridges and Bruce Boxleitner, as Clu and Tron, battle what rogue AI operating system in Tron?"],
+    q7: "Jeff Bridges and Bruce Boxleitner, as Clu and Tron, battle what rogue AI operating system in Tron?",
     q7a: ["Master Control Program", "Central Processing Unit", "Master Blaster", "Universal Serial Bus"],
 
-    q8: ["What is the name of the girl Caleb primarily interacts with in Ex Machina?"],
+    q8: "What is the name of the girl Caleb primarily interacts with in Ex Machina?",
     q8a: ["Ava", "Eva", "Cher", "Anna"],
 
-    q9: ["In The Fifth Element, who plays Jean-Baptiste Emanuel Zorg?"],
+    q9: "In The Fifth Element, who plays Jean-Baptiste Emanuel Zorg?",
     q9a: ["Gary Oldman", "Gary Sinise", "Gary Busey", "Gary Cole"],
 
-    q10: ["Who wrote and performed the title theme for Flash Gordon?"],
+    q10: "Who wrote and performed the title theme for Flash Gordon?",
     q10a: ["Queen", "Kiss", "STYX", "Rush"]
 
 };
@@ -62,21 +62,26 @@ var right = 0;
 var wrong = 0;
 var skipped = 0;
 
+// Empty variable to hold player's guess
+var playerGuess = 0;
+
 // Variable to hold the index of current question
 // setting this to 10 for now if decrementing the answers below****
+// NOT SURE IF THIS IS BEING USED CORRECTLY
 var triviaIndex = 10;
 
-// Array of questions
+// So made a new one....
+var currentQuestion = 0;
+
+// Array of the questions in trivia object
 var triviaArray = [trivia.q1, trivia.q2, trivia.q3, trivia.q4, trivia.q5, trivia.q6, trivia.q7, trivia.q8, trivia.q9, trivia.q10];
 
-// Array of answers
+// Array of the answers in trivia object
 var answers = [trivia.q1a, trivia.q2a, trivia.q3a, trivia.q4a, trivia.q5a, trivia.q6a, trivia.q7a, trivia.q8a, trivia.q9a, trivia.q10a];
 
-// console.log(triviaArray);
 
-// Empty variable to hold player's guess
-// Set to number?? Set to what?....
-var playerGuess = 0;
+// Empty array to hold randomized answers to each question
+var randomArray = [];
 
 
 // Testing question
@@ -86,7 +91,7 @@ var playerGuess = 0;
 console.log(trivia.q1a);
 console.log(trivia.q1a[0]);
 // [0] is always right answer when un-shuffled... doesn't work to call out (playerGuess === to trivia[1] when shuffled...)
-
+console.log(trivia.q1a.length);
 
 
 
@@ -103,21 +108,15 @@ console.log(trivia.q1a[0]);
 // renderQuestion needs to also a) render SHUFFLED answers, b) start/reveal a timer
 
 function shuffle(array) {
-		var currentIndex = answers.length, tempValue, randomIndex;
+		while (randomArray.length < 4) {
+			var rand = Math.floor(Math.random() * 4);
 
-		while (0 !== currentIndex) {
-			randomIndex = Math.floor(Math.random() * currentIndex);
-			currentIndex -= 1;
-
-			tempValue = answers[currentIndex];
-			answers[currentIndex] = answers[randomIndex];
-			answers[randomIndex] = tempValue;
+			if (randomArray.indexOf(trivia[currentQuestion].answers.trivia.q1a[rand]) === -1) {
+				randomArray.push(trivia[currentQuestion].answers.trivia.q1a[rand]);
+			}
 		}
-	return array;
+	console.log(randomArray);
 }
-
-
-
 
 
 // Will need if/else for each correct answer?
@@ -159,9 +158,7 @@ $(document).ready(function() {
 
 
 
-
-
-// THIS ISN'T LINKED TO ANYTHING YET, JUST PUZZLE PIECE
+// THIS ISN'T LINKED TO ANYTHING OTHER THAN THE OVERALL DOC.READY FUNCTION, JUST PUZZLE PIECE
     // If there are no more questions, stop the function
     if (triviaIndex === triviaArray.length) {
         return;
@@ -172,21 +169,29 @@ $(document).ready(function() {
     // Something that captures which button is pressed????
     // "value" related to the button value!!
     playerGuess = $(this).attr("value");
-    console.log("You chose: " + playerGuess);
+    	console.log("You chose: " + playerGuess);
 
     // After each answer is selected, a screen displays telling user if correct,
+    // These aren't in order of the array anymore since ~hopefully~ they'll be rendering randomly
     if (playerGuess === "Alan Rickman" || playerGuess === "Sam Neill" || playerGuess === "Tina Turner" || playerGuess === "Master Control Program" || playerGuess === "Ava" || playerGuess === "The Engineers" || playerGuess === "Queen" || playerGuess === "Gary Oldman" || playerGuess === "Terry Gilliam" || playerGuess === "Dennis Hopper") {
 
         console.log("Correct");
 
         // incorrect,  ***BUT THIS WON"T WORK IF RANDOMIZING THE QUESTIONS
-    } else if (playerGuess !== triviaArray[triviaIndex][1]) {
+        // change to ELSE
+    // } else if (playerGuess !== triviaArray[triviaIndex][1]) {
+        // console.log("Incorrect");
+
+    } else {
+
         console.log("Incorrect");
 
-        // or if time ran out (these will be totaled at the END of the game)
-    } else {
-        console.log("Times up");
     }
+
+        // or if time ran out (these will be totaled at the END of the game)
+    // } else {
+        // console.log("Times up");
+    // }
 
     // Increment or DECREMENT**** (depends on how being used above) the trivia question index variable and call the renderQuestion function
     triviaIndex--;
