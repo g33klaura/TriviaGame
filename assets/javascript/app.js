@@ -82,8 +82,10 @@ var playerGuess = 0;
 // Testing question
 // console.log(trivia.q4[0]);
 // Testing answers retrieval
-// console.log(trivia.q1a);
-// [1] is always right answer. Thus need these to populate randomly in buttons....
+// console.log(answers.trivia.q1a);
+console.log(trivia.q1a);
+console.log(trivia.q1a[0]);
+// [0] is always right answer when un-shuffled... doesn't work to call out (playerGuess === to trivia[1] when shuffled...)
 
 
 
@@ -116,7 +118,7 @@ function shuffle(array) {
 
 
 
-// ^^^^Should this function have the timer mechanism to not load immediately on function call??
+
 
 // Will need if/else for each correct answer?
 // Do every correct answer in one if (use || for or)?
