@@ -57,28 +57,69 @@ var trivia = {
 
 };
 
+// Testing question
+console.log(trivia.q1);
+// Testing answers retrieval
+console.log(trivia.q1a);
+console.log(trivia.q1a[0]);
 
 // Score starts at 0; number of correct, incorrect, and skipped questions will update these variables
 var right = 0;
 var wrong = 0;
 var skipped = 0;
 
-
+// Set timer to 2 minutes in milliseconds*****
+var timeRemaining = 120000;
 
 
 
 /* FUNCTIONS =========================================
  */
 
-// Function to run countdown timer
+// Function to run countdown timer  ****NOT DONE
 function countdown() {
 	// Call to empty the instructions div so only the timer shows
 	$("#instructions").empty();
 
 	// Will start clock......... (doesn't yet)
-	$("#timer").append("<p>The timer is running</p>");
+	// $("#timer").append("<p>The timer is running</p>");
+	// console.log("Timer running");
+
+	start();
+	decrement();
+	
+}
+
+// function starts the timer
+function start(){
+	timeRemaining = setInterval(decrement, 1000);
+	
+	$("#timer").html("<p>Time remaining: " + timeRemaining + "</p>"); 
+
+	// Need "if timeRemaining === 0 || all questions answered, stop"
 	console.log("Timer running");
 }
+
+// function has timer count down
+function decrement() {
+	timeRemaining--;
+	// OR DO I NEED ~ANOTHER~ VARIABLE FOR THE TIME???
+
+	// $("#timer").html("<p>Time remaining: " + timeRemaining + "</p>"); 
+
+	// Need "if timeRemaining === 0 || all questions answered, stop"
+	// console.log("Timer running");
+}
+
+
+// NOTHING IS WORKING
+// Use for testing, then comment-out
+function stop() {
+	console.log("Timer stopped");
+	clearInterval(timeRemaining);
+}
+
+
 
 
 
