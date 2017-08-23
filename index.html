@@ -11,59 +11,65 @@
 	</head>
 	<body>
 		<main class="container">
+			<!-- Game Title happily in it's own row with one column 12-->
+			<section class="row">
+				<div class="col-md-12">
+					<h1 id="title">Super Sci-fi Cinema Trivia!</h1>	
+				</div>
+			</section>
 
-		<!-- Game Title happily in it's own row with one column 12-->
-		<section class="row">
-			<div class="col-md-12">
-				<h1 id="title">Super Sci-fi Cinema Trivia!</h1>
-			</div>
-		</section>
+			<section>
+				<!-- Start/Stop buttons to test timer -->
+				<!-- DELETE ONCE WORKING -->
+					<button id="resume-test">Resume</button>
+					<button id="stop-test">Stop</button>
+			</section>
 
-		<!-- Game Divs -->
-		<!-- Need an even HIGHER LEVEL top row! Include both of these rows w/ column 12 -->
-		<section class="row">
-			<div class="col-md-12">
+			<!-- Game Divs -->
+			<!-- Need an even HIGHER LEVEL top row! Include both of these rows w/ column 12 -->
+			<section class="row">
+				<div class="col-md-12">
+					
+					<!-- First Row, Single column of 12 -->
+					<section class="row">
+						<div class="col-md-12">
+							<div class="game-contents">
+								<p id="instructions">Instructions go here</p>
+								<p id="timer"></p>
 
-		<!-- First Row, Single column of 12 -->
-				<section class="row">
-					<div class="col-md-12">
-						<div class="game-contents" id="timer">
-							<p id="instructions">Instructions go here</p>
-
-							<!-- Complex Game: -->
-							<!-- Will it work having the timer in the div this <p> is in??? -->
-							<!-- <p id="questions">The game questions will show here!! Timer above!</p> -->
+								<!-- Complex Game: -->
+								<!-- Will it work having the timer in the div this <p> is in??? -->
+								<!-- <p id="questions">The game questions will show here!! Timer above!</p> -->
+							</div>
 						</div>
-					</div>
-				<!-- </section> -->
-		
-		<!-- Second Row, Single column 12 -->
-		<!-- If I make these each in a separate row, they go next to each other, but in one row has a space between...... -->
-		<!-- ^^SOLUTION: Remove margin-top in css -->
-				<!-- <section class="row"> -->
-					<div class="col-md-12">
-						<div class="game-contents" id="qna">
-							<!-- Start button -->
-							<button id="game-start">Start the game!</button>
-							
-						<!-- Basic Game: have questions & answers render in this div -->
+						<!-- </section> -->
+						
+						<!-- Second Row, Single column 12 -->
+						<!-- If I make these each in a separate row, they go next to each other, but in one row has a space between...... -->
+						<!-- ^^SOLUTION: Remove margin-top in css -->
+						<!-- <section class="row"> -->
+						<div class="col-md-12">
+							<div class="game-contents" id="qna">
+								
+								<!-- Start button -->
+								<button id="game-start">Start the game!</button>
+								
+								<!-- Basic Game: have questions & answers render in this div -->
 
-							<!-- Complex Game: -->
-							<!-- Answer buttons (hidden on page load) -->
-							<!-- OR, should these populate from jQuery, like fridge activity?.... -->
-							<!-- Will need spacing with CSS regardless -->
-							<!-- <button id="answer1" class="answers" value="">Button 1</button> -->
-							<!-- <button id="answer2" class="answers" value="">Button 2</button> -->
-							<!-- <button id="answer3" class="answers" value="">Button 3</button> -->
-							<!-- <button id="answer4" class="answers" value="">Button 4</button> -->
+								<!-- Complex Game: -->
+								<!-- Answer buttons (hidden on page load) -->
+								<!-- OR, should these populate from jQuery, like fridge activity?.... -->
+								<!-- Will need spacing with CSS regardless -->
+								<!-- <button id="answer1" class="answers" value="">Button 1</button> -->
+								<!-- <button id="answer2" class="answers" value="">Button 2</button> -->
+								<!-- <button id="answer3" class="answers" value="">Button 3</button> -->
+								<!-- <button id="answer4" class="answers" value="">Button 4</button> -->
+							</div>
 						</div>
-					</div>
-				</section>
-
-			</div>
-		</section>
-
-		<!-- Closing tag for full content container -->
+					</section>
+				</div>
+			</section>
+			<!-- Closing tag for full content container -->
 		</main>
 
 		<!-- SCRIPT LINKS BELOW -->
@@ -71,7 +77,7 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<!-- Bootstrap js -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<!-- Link to my js -->
+		<!-- Link to my js (advanced and basic) -->
 		<!-- <script type="text/javascript" src="assets/javascript/app.js"></script> -->
 		<script type="text/javascript" src="assets/javascript/app-basic.js"></script>
 	</body>
