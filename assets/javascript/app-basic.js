@@ -69,8 +69,10 @@ var wrong = 0;
 var skipped = 0;
 
 // Set timer to 2 minutes in milliseconds*****
-var timeRemaining = 120000;
-
+// Setting to 100 for testing*****
+var timeRemaining = 100;
+// Variable to hold the interval id when executing the run function
+var intervalId;
 
 
 /* FUNCTIONS =========================================
@@ -85,38 +87,51 @@ function countdown() {
 	// $("#timer").append("<p>The timer is running</p>");
 	// console.log("Timer running");
 
-	start();
-	decrement();
+	run();
+	// decrement();
 	
 }
+
+// Buttons for testing the timer (THEN DELETE)
+$("#stop-test").on("click", stop);
+$("#resume-test").on("click", run);
+
 
 // function starts the timer
-function start(){
-	timeRemaining = setInterval(decrement, 1000);
+// decrements the number once a second
+function run(){
+	intervalId = setInterval(decrement, 1000);
 	
-	$("#timer").html("<p>Time remaining: " + timeRemaining + "</p>"); 
-
-	// Need "if timeRemaining === 0 || all questions answered, stop"
-	console.log("Timer running");
-}
-
-// function has timer count down
-function decrement() {
-	timeRemaining--;
-	// OR DO I NEED ~ANOTHER~ VARIABLE FOR THE TIME???
-
+	// Displays remaining time on page
 	// $("#timer").html("<p>Time remaining: " + timeRemaining + "</p>"); 
 
 	// Need "if timeRemaining === 0 || all questions answered, stop"
 	// console.log("Timer running");
 }
 
+// function has timer count down
+function decrement() {
+	timeRemaining--;
 
-// NOTHING IS WORKING
-// Use for testing, then comment-out
+	// console.log("Timer running");
+
+	$("#timer").html("<p>Time remaining: " + timeRemaining + "</p>"); 
+
+	// Need "if timeRemaining === 0 || all questions answered, stop"
+	if (timeRemaining === 0) {
+		stop();
+
+		console.log("Time is up");
+	}
+	
+}
+
+// Function to stop the timer once time is up
 function stop() {
+	
+	clearInterval(intervalId);
+
 	console.log("Timer stopped");
-	clearInterval(timeRemaining);
 }
 
 
@@ -143,6 +158,7 @@ $(document).ready(function() {
 		// $("#timer").show();
 		// $("#qna").show();
 
+		// Run the function to start the timer
 		countdown();
 	});
 
