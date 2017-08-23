@@ -24,9 +24,9 @@ var trivia = {
 // try this one instead
 var trivia = {
 
-    q1: "In movie adaptation of The Hitchhiker\’s Guide to the Galaxy, who voiced Marvin the robot?",
+    q1: "In movie adaptation of The Hitchhikers Guide to the Galaxy, who voiced Marvin the robot?",
     q1a: ["Alan Rickman", "Alan Alda", "Alan Tudyk", "Alan Cumming"],
-    
+
     q2: "Which member of Monty Python wrote and directed Brazil?",
     q2a: ["Terry Gilliam", "John Cleese", "Graham Chapman", "Eric Idle"],
 
@@ -68,16 +68,16 @@ var playerGuess = 0;
 // Variable to hold the index of current question
 // setting this to 10 for now if decrementing the answers below****
 // NOT SURE IF THIS IS BEING USED CORRECTLY
-var triviaIndex = 10;
+var triviaIndex = 0;
 
 // So made a new one....
-var currentQuestion = 0;
+// var currentQuestion = 0;
 
 // Array of the questions in trivia object
-var triviaArray = [trivia.q1, trivia.q2, trivia.q3, trivia.q4, trivia.q5, trivia.q6, trivia.q7, trivia.q8, trivia.q9, trivia.q10];
+var questionsArray = [trivia.q1, trivia.q2, trivia.q3, trivia.q4, trivia.q5, trivia.q6, trivia.q7, trivia.q8, trivia.q9, trivia.q10];
 
 // Array of the answers in trivia object
-var answers = [trivia.q1a, trivia.q2a, trivia.q3a, trivia.q4a, trivia.q5a, trivia.q6a, trivia.q7a, trivia.q8a, trivia.q9a, trivia.q10a];
+var answersArray = [trivia.q1a, trivia.q2a, trivia.q3a, trivia.q4a, trivia.q5a, trivia.q6a, trivia.q7a, trivia.q8a, trivia.q9a, trivia.q10a];
 
 
 // Empty array to hold randomized answers to each question
@@ -85,18 +85,18 @@ var randomArray = [];
 
 
 // Testing question
-// console.log(trivia.q4[0]);
+console.log(trivia.q1);
 // Testing answers retrieval
-// console.log(answers.trivia.q1a);
 console.log(trivia.q1a);
 console.log(trivia.q1a[0]);
 // [0] is always right answer when un-shuffled... doesn't work to call out (playerGuess === to trivia[1] when shuffled...)
-console.log(trivia.q1a.length);
-
+// console.log(trivia.q1a.length);
+// console.log(trivia.indexOf(trivia.q1a));  ~WRONG
+// console.log(answers[trivia.q1a]);  ~WHY IS THIS UNDEFINED
 
 
 /* FUNCTIONS =========================================
-*/
+ */
 
 
 // Function to loop through trivia questions
@@ -107,16 +107,19 @@ console.log(trivia.q1a.length);
 // HERE******
 // renderQuestion needs to also a) render SHUFFLED answers, b) start/reveal a timer
 
+// Now this guy shuffles the letters of the first answer *unamused face*
+/*
 function shuffle(array) {
 		while (randomArray.length < 4) {
 			var rand = Math.floor(Math.random() * 4);
 
-			if (randomArray.indexOf(trivia[currentQuestion].answers.trivia.q1a[rand]) === -1) {
-				randomArray.push(trivia[currentQuestion].answers.trivia.q1a[rand]);
+			if (randomArray.indexOf(trivia.q1a[0][rand]) === -1) {
+				randomArray.push(trivia.q1a[0][rand]);
 			}
 		}
 	console.log(randomArray);
 }
+*/
 
 
 // Will need if/else for each correct answer?
@@ -124,43 +127,59 @@ function shuffle(array) {
 
 
 /* MAIN PROCESS =========================================
-*/
+ */
 
 
 // This code makes sure the JS doesn't run until the HTML is finished loading
 // How much of the process does this block need to contain?****
 $(document).ready(function() {
 
-	// Starts off hiding portion that shows the answer buttons
-	$(".answers").hide();
+    // Starts off hiding portion that shows the answer buttons
+    // Is clunky tho. You see it flash on the screen on page load
+    // Switch to having it populate after the start is clicked???????
+    $("#questions").hide();
+    $(".answers").hide();
 
-	// When the player clicks the start button, this function runs to a) hide the start button, b) reveal the answer buttons and begin the game on the first question
-	$("#game-start").on("click", function() { 
-    
-    	console.log("Start button was clicked");
+    // When the player clicks the start button, this function runs to a) hide the start button, b) reveal the answer buttons and begin the game on the first question
+    $("#game-start").on("click", function() {
 
-    	// Not working on deployed GithubPages site tho..........
-    	$("#game-start").hide();
+        console.log("Start button was clicked");
 
-    	$(".answers").show();
+        // Not working on deployed GithubPages site tho..........
+        $("#game-start").hide();
 
-    	// Or really, the .show() for ".answers" should happen as part of the renderQuestion() function
-    	// renderQuestion();
+        $("#questions").show();
+
+        $(".answers").show();
+
+        // Or really, the .show() for ".answers" should happen as part of the renderQuestion() function
+        // renderQuestion();
     });
 
 
-// After start is clicked, the game begins
+    // After start is clicked, the game begins
 
-// The first question with buttons for 4 possible answers needs to render, along with a timer for answering just this question*********
+    // The first question with buttons for 4 possible answers needs to render, along with a timer for answering just this question*********
 
-// For loop? Do/while loop?
-// playerGuess part needs to be linked where "this" is
+    // For loop? Do/while loop?
+    // playerGuess part needs to be linked where "this" is
+    for (triviaIndex = 0; triviaIndex < questionsArray.length; triviaIndex++) {
+
+        // 'var questions' to show game questions on page
+        var questions = $("<p>");
+
+        questions.attr("question-data", questionsArray[triviaIndex]);
+
+        questions.text(questionsArray[triviaIndex]);
+
+        $("#questions").append(questions);
+
+    }
 
 
-
-// THIS ISN'T LINKED TO ANYTHING OTHER THAN THE OVERALL DOC.READY FUNCTION, JUST PUZZLE PIECE
+    // THIS ISN'T LINKED TO ANYTHING OTHER THAN THE OVERALL DOC.READY FUNCTION, JUST PUZZLE PIECE
     // If there are no more questions, stop the function
-    if (triviaIndex === triviaArray.length) {
+    if (triviaIndex === questionsArray.length) {
         return;
     }
 
@@ -169,7 +188,7 @@ $(document).ready(function() {
     // Something that captures which button is pressed????
     // "value" related to the button value!!
     playerGuess = $(this).attr("value");
-    	console.log("You chose: " + playerGuess);
+    console.log("You chose: " + playerGuess);
 
     // After each answer is selected, a screen displays telling user if correct,
     // These aren't in order of the array anymore since ~hopefully~ they'll be rendering randomly
@@ -179,7 +198,7 @@ $(document).ready(function() {
 
         // incorrect,  ***BUT THIS WON"T WORK IF RANDOMIZING THE QUESTIONS
         // change to ELSE
-    // } else if (playerGuess !== triviaArray[triviaIndex][1]) {
+        // } else if (playerGuess !== triviaArray[triviaIndex][1]) {
         // console.log("Incorrect");
 
     } else {
@@ -188,13 +207,13 @@ $(document).ready(function() {
 
     }
 
-        // or if time ran out (these will be totaled at the END of the game)
+    // or if time ran out (these will be totaled at the END of the game)
     // } else {
-        // console.log("Times up");
+    // console.log("Times up");
     // }
 
     // Increment or DECREMENT**** (depends on how being used above) the trivia question index variable and call the renderQuestion function
-    triviaIndex--;
+    triviaIndex++;
     // renderQuestion();
 
 });
