@@ -70,7 +70,15 @@ var skipped = 0;
 /* FUNCTIONS =========================================
  */
 
+// Function to run countdown timer
+function countdown() {
+	// Call to empty the instructions div so only the timer shows
+	$("#instructions").empty();
 
+	// Will start clock......... (doesn't yet)
+	$("#timer").append("<p>The timer is running</p>");
+	console.log("Timer running");
+}
 
 
 
@@ -79,6 +87,22 @@ var skipped = 0;
 
 $(document).ready(function() {
 
+	// Space for timer & game data start out hidden????
+	// $("#timer").hide();
+	// $("#qna").hide();
 
+	// #Still need start button
+	// #Still hide button once clicked, then render a) Timer, b) questions w/ answer radio buttons
+
+	$("#game-start").on("click", function() {
+		console.log("Start button was clicked");
+
+		$("#game-start").hide();
+
+		// $("#timer").show();
+		// $("#qna").show();
+
+		countdown();
+	});
 
 })
