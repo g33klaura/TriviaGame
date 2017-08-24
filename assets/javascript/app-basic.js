@@ -6,14 +6,13 @@
 // #Player can only select one answer per question
 
 /* Needs:
-[] Start button
-[] Variables with questions/answers/arrays of each
-[] Score variables
+[x] Start button
+[x] Variables with questions/answers/arrays of each
+[x] Score variables
 [] Questions above answer choices on page after Start is pressed
-[] Countdown timer to begin after Start is pressed
+[x] Countdown timer to begin after Start is pressed
 [] Score total page after timer ends/questions answered
 [] Queen <3
-
 */
 
 
@@ -57,22 +56,30 @@ var trivia = {
 
 };
 
-// Testing question
-console.log(trivia.q1);
-// Testing answers retrieval
-console.log(trivia.q1a);
-console.log(trivia.q1a[0]);
 
-// Score starts at 0; number of correct, incorrect, and skipped questions will update these variables
+// Array of the questions in trivia object
+var questionsArray = [trivia.q1, trivia.q2, trivia.q3, trivia.q4, trivia.q5, trivia.q6, trivia.q7, trivia.q8, trivia.q9, trivia.q10];
+
+// Array of the answers in trivia object
+var answersArray = [trivia.q1a, trivia.q2a, trivia.q3a, trivia.q4a, trivia.q5a, trivia.q6a, trivia.q7a, trivia.q8a, trivia.q9a, trivia.q10a];
+
+
+// SCORE VARIABLES
+// Number of correct, incorrect, and skipped questions will update these variables
 var right = 0;
 var wrong = 0;
 var skipped = 0;
 
-// Set timer to 2 minutes in milliseconds*****
-// Setting to 100 for testing*****
-var timeRemaining = 100;
+
+// TIMER VARIABLES
+// Set timer to 2 minutes****
+var timeRemaining = 120;
+
 // Variable to hold the interval id when executing the run function
 var intervalId;
+
+
+
 
 
 /* FUNCTIONS =========================================
@@ -80,12 +87,9 @@ var intervalId;
 
 // Function to run countdown timer  ****NOT DONE
 function countdown() {
-	// Call to empty the instructions div so only the timer shows
-	$("#instructions").empty();
 
-	// Will start clock......... (doesn't yet)
-	// $("#timer").append("<p>The timer is running</p>");
-	// console.log("Timer running");
+	// Call to empty the instructions div so only the timer shows ~ kinda clunky tho....
+	$("#instructions").empty();
 
 	run();
 	// decrement();
@@ -115,7 +119,7 @@ function decrement() {
 
 	// console.log("Timer running");
 
-	$("#timer").html("<p>Time remaining: " + timeRemaining + "</p>"); 
+	$("#timer").html("<p>You have " + timeRemaining + " seconds left!</p>"); 
 
 	// Need "if timeRemaining === 0 || all questions answered, stop"
 	if (timeRemaining === 0) {
@@ -134,6 +138,19 @@ function stop() {
 	console.log("Timer stopped");
 }
 
+function playTrivia() {
+
+	$("#qna").show();
+	
+	// New variable to hopefully allow game data to render on the page
+	// Set to the div with id "qna" (Q&A)
+	// var gameOnPage = $("#qna");
+
+	// Thinking I need a for loop, to run through my trivia array. But what would make my data loop through and create the radio button groups so I don't have to write them into the html?????....
+
+}
+
+
 
 
 
@@ -141,14 +158,21 @@ function stop() {
 /* MAIN PROCESS =========================================
 */
 
+
+// Testing question
+console.log(trivia.q1);
+// Testing answers retrieval
+console.log(trivia.q1a);
+console.log(trivia.q1a[0]);
+
+
 $(document).ready(function() {
 
 	// Space for timer & game data start out hidden????
 	// $("#timer").hide();
-	// $("#qna").hide();
+	$("#qna").hide();
 
-	// #Still need start button
-	// #Still hide button once clicked, then render a) Timer, b) questions w/ answer radio buttons
+	// #Still need: render a) Timer~DONE, b) questions w/ answer radio buttons
 
 	$("#game-start").on("click", function() {
 		console.log("Start button was clicked");
@@ -160,6 +184,7 @@ $(document).ready(function() {
 
 		// Run the function to start the timer
 		countdown();
+		playTrivia();
 	});
 
 })

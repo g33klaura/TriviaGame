@@ -31,32 +31,42 @@
 			<!-- <section class="row"> -->
 				<!-- <div class="col-md-12"> -->
 					
-					<!-- First Row, Single column of 12 -->
-					<section class="row">
-						<div class="col-md-12">
-							<div class="game-contents">
-								<p id="instructions">Instructions go here</p>
-								<p id="timer"></p>
+				<!-- First Row, Single column of 12 -->
+			<section class="row">
+				<div class="col-md-12">
+					<div class="game-contents">
+						<p id="instructions">Instructions go here</p>
+						<p id="timer"></p>
 
-								<!-- Complex Game: -->
-								<!-- Will it work having the timer in the div this <p> is in??? -->
-								<!-- <p id="questions">The game questions will show here!! Timer above!</p> -->
-							</div>
-						</div>
-						<!-- </section> -->
+							<!-- Complex Game: -->
+							<!-- Will it work having the timer in the div this <p> is in??? -->
+							<!-- <p id="questions">The game questions will show here!! Timer above!</p> -->
+					</div>
+				</div>
+					<!-- </section> -->
 						
-						<!-- Second Row, Single column 12 -->
-						<!-- If I make these each in a separate row, they go next to each other, but in one row has a space between...... -->
-						<!-- ^^SOLUTION: Remove margin-top in css -->
-						<!-- <section class="row"> -->
-						<div class="col-md-12">
-							<div class="game-contents" id="qna">
+					<!-- Second Row, Single column 12 -->
+					<!-- If I make these each in a separate row, they go next to each other, but in one row has a space between...... -->
+					<!-- ^^SOLUTION: Remove margin-top in css -->
+					<!-- <section class="row"> -->
+				<div class="col-md-12">
+					<div class="game-contents">
 								
-								<!-- Start button -->
-								<button id="game-start">Start the game!</button>
-								
-								<!-- Basic Game: have questions & answers render in this div -->
+						<!-- Start button -->
+						<button id="game-start">Start the game!</button>
+						
+						<div id="qna">		
+						<!-- Basic Game: have questions & answers render in this div -->
+						<p>Question 1:</p>
+						<fieldset id="one">
+							<!-- <legend>Choose one: </legend> -->
+							<label for="q1a">Alan Rickman</label>
+							<input type="radio" name="q1a" value="Alan Rickman">
+							<label for="q1b">Alan Alda</label>
+							<input type="radio" name="q1b" value="Alan Alda">
+						</fieldset>
 
+						</div>
 								<!-- Complex Game: -->
 								<!-- Answer buttons (hidden on page load) -->
 								<!-- OR, should these populate from jQuery, like fridge activity?.... -->
@@ -65,10 +75,10 @@
 								<!-- <button id="answer2" class="answers" value="">Button 2</button> -->
 								<!-- <button id="answer3" class="answers" value="">Button 3</button> -->
 								<!-- <button id="answer4" class="answers" value="">Button 4</button> -->
-							</div>
-						</div>
-					</section>
-					
+					</div>
+				</div>
+			</section>
+
 				<!-- </div> -->
 			<!-- </section> -->
 
