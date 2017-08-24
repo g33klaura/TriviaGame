@@ -14,24 +14,22 @@
 			<!-- Game Title happily in it's own row with one column 12-->
 			<section class="row">
 				<div class="col-md-12">
-					<h1 id="title">Super Sci-fi Cinema Trivia!</h1>	
+					<h1 id="title">Super Sci-fi Cinema Trivia!</h1>
 				</div>
 			</section>
-
 			<section>
 				<!-- Start/Stop buttons to test timer -->
 				<!-- DELETE ONCE WORKING -->
-					<button id="resume-test">Resume</button>
-					<button id="stop-test">Stop</button>
+				<button id="resume-test">Resume</button>
+				<button id="stop-test">Stop</button>
 			</section>
-
 			<!-- Game Divs -->
 			<!-- Need an even HIGHER LEVEL top row???
 			Include both of these rows w/ column 12 -->
 			<!-- <section class="row"> -->
-				<!-- <div class="col-md-12"> -->
-					
-				<!-- First Row, Single column of 12 -->
+			<!-- <div class="col-md-12"> -->
+			
+			<!-- First Row, Single column of 12 -->
 			<section class="row">
 				<div class="col-md-12">
 					<div class="game-contents">
@@ -40,122 +38,228 @@
 						
 						<!-- Empty paragraph for timer -->
 						<p id="timer"></p>
-
 						<!-- Empty paragraph for score -->
 						<p id="score"></p>
-
-							<!-- Complex Game: -->
-							<!-- <p id="questions">The game questions will show here!! Timer above!</p> -->
+						<!-- Complex Game: -->
+						<!-- <p id="questions">The game questions will show here!! Timer above!</p> -->
 					</div>
 				</div>
-					<!-- </section> -->
-						
-					<!-- Second Row, Single column 12 -->
-					<!-- If I make these each in a separate row, they go next to each other, but in one row has a space between...... -->
-					<!-- ^^SOLUTION: Remove margin-top in css -->
-					<!-- <section class="row"> -->
+				<!-- </section> -->
+				
+				<!-- Second Row, Single column 12 -->
+				<!-- If I make these each in a separate row, they go next to each other, but in one row has a space between...... -->
+				<!-- ^^SOLUTION: Remove margin-top in css -->
+				<!-- <section class="row"> -->
 				<div class="col-md-12">
 					<div class="game-contents">
-								
+						
 						<!-- Start button -->
 						<button id="game-start">Start the game!</button>
 						
-						<div id="qna">		
-						<!-- Basic Game: have questions & answers render in this div -->
-						<!-- <p>Question 1:</p> -->
-						<fieldset>
-							<p>1) In movie adaptation of The Hitchhikers Guide to the Galaxy, who voiced Marvin the robot?</p>
-							<label class="radio-inline">
-							<input type="radio" name="q1" id="q1a" value="Alan Rickman">
-							<p>Alan Rickman</p>
-							</label>
-
-							<label class="radio-inline">
-							<input type="radio" name="q1" id="q1b" value="Alan Alda">
-							<p>Alan Alda</p>
-							</label>
-
-							<label class="radio-inline">
-							<input type="radio" name="q1" id="q1c" value="Alan Tudyk">
-							<p>Alan Tudyk</p>
-							</label>
-
-							<label class="radio-inline">
-							<input type="radio" name="q1" id="q1d" value="Alan Cumming">
-							<p>Alan Cumming</p>
-							</label>
-						<!-- </fieldset> -->
-
-						<!-- <fieldset id="question-two"> -->
-							<p>2) Which member of Monty Python wrote and directed Brazil and The Zero Theorem?</p>
-							<label class="radio-inline">
-							<input type="radio" name="q2" id="q2a" value="John Cleese">
-							<p>John Cleese</p>
-							</label>
-
-							<label class="radio-inline">
-							<input type="radio" name="q2" id="q2b" value="Graham Chapman">
-							<p>Graham Chapman</p>
-							</label>
-
-							<label class="radio-inline">
-							<input type="radio" name="q2" id="q2c" value="Terry Gilliam">
-							<p>Terry Gilliam</p>
-							</label>
-
-							<label class="radio-inline">
-							<input type="radio" name="q2" id="q2d" value="Eric Idle">
-							<p>Eric Idle</p>
-							</label>
-						</fieldset>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+						<div id="qna">
+							<!-- Basic Game: have questions & answers render in this div -->
+							<!-- <p>Question 1:</p> -->
+							<fieldset>
+								<p>1. In movie adaptation of The Hitchhikers Guide to the Galaxy, who voiced Marvin the robot?</p>
+								<label class="radio-inline">
+									<input type="radio" name="q1" id="q1a" value="Alan Rickman">
+									<p>Alan Rickman</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q1" id="q1b" value="Alan Alda">
+									<p>Alan Alda</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q1" id="q1c" value="Alan Tudyk">
+									<p>Alan Tudyk</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q1" id="q1d" value="Alan Cumming">
+									<p>Alan Cumming</p>
+								</label>
+								<!-- </fieldset> -->
+								<!-- Horizontal rule FTW!! -->
+								<hr>
+								<!-- <fieldset id="question-two"> -->
+								<p>2. Which member of Monty Python wrote and directed Brazil and The Zero Theorem?</p>
+								<label class="radio-inline">
+									<input type="radio" name="q2" id="q2a" value="John Cleese">
+									<p>John Cleese</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q2" id="q2b" value="Graham Chapman">
+									<p>Graham Chapman</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q2" id="q2c" value="Terry Gilliam">
+									<p>Terry Gilliam</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q2" id="q2d" value="Eric Idle">
+									<p>Eric Idle</p>
+								</label>
+								<hr>
+								<p>3. Who played the reptilian villain, King Koopa, in Super Mario Bros.?</p>
+								<label class="radio-inline">
+									<input type="radio" name="q3" id="q3a" value="Dennis Leary">
+									<p>Dennis Leary</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q3" id="q3b" value="Dennis Quaid">
+									<p>Dennis Quaid</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q3" id="q3c" value="Dennis Farina">
+									<p>Dennis Farina</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q3" id="q3d" value="Dennis Hopper">
+									<p>Dennis Hopper</p>
+								</label>
+								<hr>
+								<p>4. In Prometheus, who are the scientists in the crew searching for?</p>
+								<label class="radio-inline">
+									<input type="radio" name="q4" id="q4a" value="The Mechanics">
+									<p>The Mechanics</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q4" id="q4b" value="The Engineers">
+									<p>The Engineers</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q4" id="q4c" value="The Xenomorphs">
+									<p>The Xenomorphs</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q4" id="q4d" value="The Lumineers">
+									<p>The Lumineers</p>
+								</label>
+								<hr>
+								<p>5. Who starred as engineer Dr. William Weir in Event Horizon?</p>
+								<label class="radio-inline">
+									<input type="radio" name="q5" id="q5a" value="Sam Elliott">
+									<p>Sam Elliott</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q5" id="q5b" value="Sam Neill">
+									<p>Sam Neill</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q5" id="q5c" value="Sam Rami">
+									<p>Sam Rami</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q5" id="q5d" value="Sam Rockwell">
+									<p>Sam Rockwell</p>
+								</label>
+								<hr>
+								<p>6. What 80s pop star played the blood-thirsty Aunty Entity in Mad Max Beyond Thunderdome?</p>
+								<label class="radio-inline">
+									<input type="radio" name="q6" id="q6a" value="Janet Jackson">
+									<p>Janet Jackson</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q6" id="q6b" value="Gloria Estefan">
+									<p>Gloria Estefan</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q6" id="q6c" value="Vanessa Williams">
+									<p>Vanessa Williams</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q6" id="q6d" value="Tina Turner">
+									<p>Tina Turner</p>
+								</label>
+								<hr>
+								<p>7. Jeff Bridges and Bruce Boxleitner, as Clu and Tron, battle what rogue AI operating system in Tron?</p>
+								<label class="radio-inline">
+									<input type="radio" name="q7" id="q7a" value="Central Processing Unit">
+									<p>Central Processing Unit</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q7" id="q7b" value="Universal Serial Bus">
+									<p>Universal Serial Bus</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q7" id="q7c" value="Master Control Program">
+									<p>Master Control Program</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q7" id="q7d" value="Master Blaster">
+									<p>Master Blaster</p>
+								</label>
+								<hr>
+								<p>8. hat is the name of the girl Caleb primarily interacts with in Ex Machina?</p>
+								<label class="radio-inline">
+									<input type="radio" name="q8" id="q8a" value="Ava">
+									<p>Ava</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q8" id="q8b" value="Eva">
+									<p>Eva</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q8" id="q8c" value="Cher">
+									<p>Cher</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q8" id="q8d" value="Ana">
+									<p>Ana</p>
+								</label>
+								<hr>
+								<p>9. In The Fifth Element, who plays Jean-Baptiste Emanuel Zorg?</p>
+								<label class="radio-inline">
+									<input type="radio" name="q9" id="q9a" value="Gary Sinise">
+									<p>Gary Sinise</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q9" id="q9b" value="Gary Oldman">
+									<p>Gary Oldman</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q9" id="q9c" value="Gary Busey">
+									<p>Gary Busey</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q9" id="q9d" value="Gary Cole">
+									<p>Gary Cole</p>
+								</label>
+								<hr>
+								<p>10. Who wrote and performed the title theme for Flash Gordon?</p>
+								<label class="radio-inline">
+									<input type="radio" name="q10" id="q10a" value="Queen">
+									<p>Queen</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q10" id="q10b" value="Kiss">
+									<p>Kiss</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q10" id="q10c" value="STYX">
+									<p>STYX</p>
+								</label>
+								<label class="radio-inline">
+									<input type="radio" name="q10" id="q10d" value="Rush">
+									<p>Rush</p>
+								</label>
+							</fieldset>
+							
 						</div>
-								<!-- Complex Game: -->
-								<!-- Answer buttons (hidden on page load) -->
-								<!-- OR, should these populate from jQuery, like fridge activity?.... -->
-								<!-- Will need spacing with CSS regardless -->
-								<!-- <button id="answer1" class="answers" value="">Button 1</button> -->
-								<!-- <button id="answer2" class="answers" value="">Button 2</button> -->
-								<!-- <button id="answer3" class="answers" value="">Button 3</button> -->
-								<!-- <button id="answer4" class="answers" value="">Button 4</button> -->
+						<!-- Complex Game: -->
+						<!-- Answer buttons (hidden on page load) -->
+						<!-- OR, should these populate from jQuery, like fridge activity?.... -->
+						<!-- Will need spacing with CSS regardless -->
+						<!-- <button id="answer1" class="answers" value="">Button 1</button> -->
+						<!-- <button id="answer2" class="answers" value="">Button 2</button> -->
+						<!-- <button id="answer3" class="answers" value="">Button 3</button> -->
+						<!-- <button id="answer4" class="answers" value="">Button 4</button> -->
 					</div>
 				</div>
 			</section>
-
-				<!-- </div> -->
+			<!-- </div> -->
 			<!-- </section> -->
-
 			<!-- Closing tag for full content container -->
 		</main>
-
 		<!-- SCRIPT LINKS BELOW -->
 		<!-- Link to jquery -->
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
