@@ -51,3 +51,7 @@ p {
 #timer p {
 	font-size: 22px;
 }
+
+#qna p {
+	text-align: left;
+}
