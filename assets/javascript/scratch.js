@@ -61,8 +61,6 @@ function shuffle(array) {
 */
 
 
-
-
 // <!-- Piece that Eric showed me -->
 	function randomizearray() {
 		 while (ranarray.length < 4){ 
@@ -79,3 +77,12 @@ function shuffle(array) {
 	console.log(array[i].object[j])
 	where i is the index (0,1,2,3etc) and j is the index of the object
 	in your case console.log(trivia[0].q1a[0]) should return ALan Rickman
+
+
+// Want radio buttons not to have icons....
+// from jQuery UI page, but don't know how to re-write it
+$( function() {
+    $( "input" ).checkboxradio({
+      icon: false
+    });
+ } );

@@ -46,7 +46,7 @@ var trivia = {
     q7a: ["Master Control Program", "Central Processing Unit", "Master Blaster", "Universal Serial Bus"],
 
     q8: "What is the name of the girl Caleb primarily interacts with in Ex Machina?",
-    q8a: ["Ava", "Eva", "Cher", "Anna"],
+    q8a: ["Ava", "Eva", "Cher", "Ana"],
 
     q9: "In The Fifth Element, who plays Jean-Baptiste Emanuel Zorg?",
     q9a: ["Gary Oldman", "Gary Sinise", "Gary Busey", "Gary Cole"],
@@ -89,7 +89,9 @@ var intervalId;
 function countdown() {
 
 	// Call to empty the instructions div so only the timer shows ~ kinda clunky tho....
-	$("#instructions").empty();
+	$("#instructions").remove();
+
+	// $("#timer").show();
 
 	run();
 	// decrement();
@@ -141,15 +143,20 @@ function stop() {
 function playTrivia() {
 
 	$("#qna").show();
-	
-	// New variable to hopefully allow game data to render on the page
-	// Set to the div with id "qna" (Q&A)
-	// var gameOnPage = $("#qna");
 
+	// New variable to hopefully allow game data to render on the page
 	// Thinking I need a for loop, to run through my trivia array. But what would make my data loop through and create the radio button groups so I don't have to write them into the html?????....
 
-}
+	// So this creates any number of radio buttons, w/o labels....
+	/*
+	for (var i = 0; i < 10; i++) {
+		var radioBtn = $("<input type='radio' name='rbtnCount' />");
+		radioBtn.appendTo("#score");
+		// setting to score div to see what happens
+	}
+	*/
 
+}
 
 
 
@@ -160,10 +167,10 @@ function playTrivia() {
 
 
 // Testing question
-console.log(trivia.q1);
+// console.log(trivia.q1);
 // Testing answers retrieval
-console.log(trivia.q1a);
-console.log(trivia.q1a[0]);
+// console.log(trivia.q1a);
+// console.log(trivia.q1a[0]);
 
 
 $(document).ready(function() {
@@ -177,8 +184,8 @@ $(document).ready(function() {
 	$("#game-start").on("click", function() {
 		console.log("Start button was clicked");
 
-		$("#game-start").hide();
-
+		// $("#game-start").hide();
+		$(this).remove();
 		// $("#timer").show();
 		// $("#qna").show();
 
@@ -187,4 +194,25 @@ $(document).ready(function() {
 		playTrivia();
 	});
 
-})
+
+	// $("#game-submit").click(function() {
+	// 	$(this).submit();
+	// 	console.log(this);
+		
+	// 	// Thinking I'll need new var here to capture the values checked off
+	// 	var playerGuess = $(input[value]).val();
+	// 	console.log(playerGuess);
+	// });
+
+	$("#game-submit").on("click", function(event) {
+		console.log("Submit button pressed");
+
+	// 	$("input:radio").change(function() {
+	// 		var playerGuess = $("form input[type='radio']:checked").val();
+	// 		console.log("The changed value is: " + playerGuess);
+	// 	});
+
+	// 	console.log(playerGuess);
+	});
+
+});
