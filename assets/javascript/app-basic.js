@@ -81,6 +81,20 @@ var intervalId;
 // Empty array to hold player guesses
 var playerGuess = [];
 
+var q1 = "";
+var q2 = "";
+var q3 = "";
+var q4 = "";
+var q5 = "";
+var q6 = "";
+var q7 = "";
+var q8 = "";
+var q9 = "";
+var q10 = "";
+
+
+
+
 
 
 /* FUNCTIONS =========================================
@@ -159,6 +173,90 @@ function playTrivia() {
 
 }
 
+// I need help with loops :(
+function score() {
+
+	if (q1 === "Alan Rickman") {
+		right++;
+	} else if (q1 === undefined) {
+		skipped++;
+	} else {
+		wrong++;
+	};
+
+	if (q2 === "Terry Gilliam") {
+		right++;
+	} else if (q2 === undefined) {
+		skipped++;
+	} else {
+		wrong++;
+	};
+
+	if (q3 === "Dennis Hopper") {
+		right++;
+	} else if (q3 === undefined) {
+		skipped++;
+	} else {
+		wrong++;
+	};
+
+	if (q4 === "The Engineers") {
+		right++;
+	} else if (q4 === undefined) {
+		skipped++;
+	} else {
+		wrong++;
+	};
+
+	if (q5 === "Sam Neill") {
+		right++;
+	} else if (q5 === undefined) {
+		skipped++;
+	} else {
+		wrong++;
+	};
+
+	if (q6 === "Tina Turner") {
+		right++;
+	} else if (q6 === undefined) {
+		skipped++;
+	} else {
+		wrong++;
+	};
+
+	if (q7 === "Master Control Program") {
+		right++;
+	} else if (q7 === undefined) {
+		skipped++;
+	} else {
+		wrong++;
+	};
+
+	if (q8 === "Ava") {
+		right++;
+	} else if (q8 === undefined) {
+		skipped++;
+	} else {
+		wrong++;
+	};
+
+	if (q9 === "Gary Oldman") {
+		right++;
+	} else if (q9 === undefined) {
+		skipped++;
+	} else {
+		wrong++;
+	};
+
+	if (q10 === "Queen") {
+		right++;
+	} else if (q10 === undefined) {
+		skipped++;
+	} else {
+		wrong++;
+	};
+
+}
 
 
 
@@ -216,30 +314,30 @@ $(document).ready(function() {
 		event.preventDefault();
 
 		// Need to capture radio buttons that were checked off  ~Probably a better way....
-		var q1 = $("input[name='q1']:checked").val();
-		var q2 = $("input[name='q2']:checked").val();
-		var q3 = $("input[name='q3']:checked").val();
-		var q4 = $("input[name='q4']:checked").val();
-		var q5 = $("input[name='q5']:checked").val();
-		var q6 = $("input[name='q6']:checked").val();
-		var q7 = $("input[name='q7']:checked").val();
-		var q8 = $("input[name='q8']:checked").val();
-		var q9 = $("input[name='q9']:checked").val();
-		var q10 = $("input[name='q10']:checked").val();
+		q1 = $("input[name='q1']:checked").val();
+		q2 = $("input[name='q2']:checked").val();
+		q3 = $("input[name='q3']:checked").val();
+		q4 = $("input[name='q4']:checked").val();
+		q5 = $("input[name='q5']:checked").val();
+		q6 = $("input[name='q6']:checked").val();
+		q7 = $("input[name='q7']:checked").val();
+		q8 = $("input[name='q8']:checked").val();
+		q9 = $("input[name='q9']:checked").val();
+		q10 = $("input[name='q10']:checked").val();
 
 		// Push button values to array of player guess
 		playerGuess.push(q1 + ", " + q2 + ", " + q3 + ", " + q4 + ", " + q5 + ", " + q6 + ", " + q7 + ", " + q8 + ", " + q9 + ", " + q10);
 
 			console.log(playerGuess);
 
+		// Run function to calculate number of right wrong skipped
+		// FUNCTION HERE
+		score();
 
+		console.log("You got " + right + " correct answers.");
+		console.log("You missed " + wrong + " answers.");
+		console.log("You skipped " + skipped + " questions.");
 
-	// 	$("input:radio").change(function() {
-	// 		var playerGuess = $("form input[type='radio']:checked").val();
-	// 		console.log("The changed value is: " + playerGuess);
-	// 	});
-
-	// 	console.log(playerGuess);
 	});
 
 });
