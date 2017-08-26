@@ -78,7 +78,8 @@ var timeRemaining = 120;
 // Variable to hold the interval id when executing the run function
 var intervalId;
 
-
+// Empty array to hold player guesses
+var playerGuess = [];
 
 
 
@@ -205,7 +206,33 @@ $(document).ready(function() {
 	// });
 
 	$("#game-submit").on("click", function(event) {
+		
 		console.log("Submit button pressed");
+
+		// Stop the timer
+		stop();
+
+		// Keep submit button from trying to submit to a server?
+		event.preventDefault();
+
+		// Need to capture radio buttons that were checked off  ~Probably a better way....
+		var q1 = $("input[name='q1']:checked").val();
+		var q2 = $("input[name='q2']:checked").val();
+		var q3 = $("input[name='q3']:checked").val();
+		var q4 = $("input[name='q4']:checked").val();
+		var q5 = $("input[name='q5']:checked").val();
+		var q6 = $("input[name='q6']:checked").val();
+		var q7 = $("input[name='q7']:checked").val();
+		var q8 = $("input[name='q8']:checked").val();
+		var q9 = $("input[name='q9']:checked").val();
+		var q10 = $("input[name='q10']:checked").val();
+
+		// Push button values to array of player guess
+		playerGuess.push(q1 + ", " + q2 + ", " + q3 + ", " + q4 + ", " + q5 + ", " + q6 + ", " + q7 + ", " + q8 + ", " + q9 + ", " + q10);
+
+			console.log(playerGuess);
+
+
 
 	// 	$("input:radio").change(function() {
 	// 		var playerGuess = $("form input[type='radio']:checked").val();
