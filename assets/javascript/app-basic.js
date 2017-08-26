@@ -256,6 +256,13 @@ function score() {
 		wrong++;
 	};
 
+	$("#right").html("<p>You got " + right + " correct answers.</p>")
+	$("#wrong").html()
+
+	console.log("You got " + right + " correct answers.");
+		console.log("You missed " + wrong + " answers.");
+		console.log("You skipped " + skipped + " questions.");
+
 }
 
 
