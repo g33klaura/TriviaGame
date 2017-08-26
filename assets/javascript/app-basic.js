@@ -114,8 +114,8 @@ function countdown() {
 }
 
 // Buttons for testing the timer (THEN DELETE)
-$("#stop-test").on("click", stop);
-$("#resume-test").on("click", run);
+// $("#stop-test").on("click", stop);
+// $("#resume-test").on("click", run);
 
 
 // function starts the timer
