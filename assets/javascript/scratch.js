@@ -86,3 +86,9 @@ $( function() {
       icon: false
     });
  } );
+
+
+// 	$("input:radio").change(function() {
+	// 		var playerGuess = $("form input[type='radio']:checked").val();
+	// 		console.log("The changed value is: " + playerGuess);
+	// 	});
