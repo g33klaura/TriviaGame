@@ -176,6 +176,9 @@ function playTrivia() {
 // I need help with loops :(
 function score() {
 
+	$("#qna").empty();
+	$("#timer").empty();
+
 	if (q1 === "Alan Rickman") {
 		right++;
 	} else if (q1 === undefined) {
@@ -256,12 +259,9 @@ function score() {
 		wrong++;
 	};
 
-	$("#right").html("<p>You got " + right + " correct answers.</p>")
-	$("#wrong").html()
-
-	console.log("You got " + right + " correct answers.");
-		console.log("You missed " + wrong + " answers.");
-		console.log("You skipped " + skipped + " questions.");
+	$("#right").html("<p>You got " + right + " correct answers.</p>");
+	$("#wrong").html("<p>You missed " + wrong + " answers.</p>");
+	$("#skipped").html("<p>You skipped " + skipped + " questions.");
 
 }
 
