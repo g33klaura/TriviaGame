@@ -9,9 +9,9 @@
 [x] Start button
 [x] Variables with questions/answers/arrays of each
 [x] Score variables
-[] Questions above answer choices on page after Start is pressed
+[x] Questions above answer choices on page after Start is pressed
 [x] Countdown timer to begin after Start is pressed
-[] Score total page after timer ends/questions answered
+[x] Score total page after timer ends/questions answered
 [] Queen <3
 */
 
@@ -263,6 +263,8 @@ function score() {
 	$("#wrong").html("<p>You missed " + wrong + " answers.</p>");
 	$("#skipped").html("<p>You skipped " + skipped + " questions.");
 
+	$(".queen").show();
+
 }
 
 
@@ -284,6 +286,7 @@ $(document).ready(function() {
 	// Space for timer & game data start out hidden????
 	// $("#timer").hide();
 	$("#qna").hide();
+	$(".queen").hide();
 
 	// #Still need: render a) Timer~DONE, b) questions w/ answer radio buttons
 
