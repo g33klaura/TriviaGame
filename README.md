@@ -1,4 +1,4 @@
-# TriviaGame
+# TriviaGame ~ Sci-Fi Cinema Edition
 
 Test your knowledge of sci-fi cinema with my JavaScript &amp; jQuery game!
 
