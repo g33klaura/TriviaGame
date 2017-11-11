@@ -1,6 +1,6 @@
 <h1 align="center">TriviaGame: Sci-Fi Cinema Edition</h1>
 
-Test your knowledge of sci-fi cinema with my JavaScript &amp; jQuery game!
+<div align="center">  Test your knowledge of sci-fi cinema with my JavaScript &amp; jQuery game!</div>
 
 
 ## Technologies Used
@@ -20,7 +20,7 @@ JavaScript, jQuery, CSS, Bootstrap CSS, HTML
 ### Screenshots
 ![Game Over Screen](assets/images/trivia_screen.png)
 
-After submitting, the total number of correctly guessed, skipped, or wrong answers will display.
+###### After submitting, the total number of correctly guessed, skipped, or wrong answers will display.
 
 
 ### Process of the Game
