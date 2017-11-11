@@ -1,8 +1,28 @@
-# TriviaGame ~ Sci-Fi Cinema Edition
+<h1 align="center">TriviaGame ~ Sci-Fi Cinema Edition</h1>
 
 Test your knowledge of sci-fi cinema with my JavaScript &amp; jQuery game!
 
-## Process of the Game
+
+## Technologies Used
+* JavaScript, jQuery, CSS, Bootstrap CSS, HTML
+
+
+### Deployed Link
+[GitHub] https://g33klaura.github.io/TriviaGame/
+
+
+### Key Features
+* Countdown timer
+* Form with radio buttons
+* Responsive design
+
+
+### Screenshots
+![Game Over Screen](assets/images/trivia_screen.png)
+After submitting, the total number of correctly guessed, skipped, or wrong answers will display.
+
+
+### Process of the Game
 
 * First screen shows start button to start game
 
@@ -15,5 +35,3 @@ Test your knowledge of sci-fi cinema with my JavaScript &amp; jQuery game!
 * Repeats until number of questions is over
 
 * Ending screen will tally number of correct, incorrect, or skipped questions
-
-
