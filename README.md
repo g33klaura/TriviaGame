@@ -18,11 +18,8 @@ JavaScript, jQuery, CSS, Bootstrap CSS, HTML
 
 
 ### Screenshots
-<div align="center">
-![Game Over Screen](assets/images/trivia_screen.png)</div>
-
-<h6 align="center">After submitting, the total number of correctly guessed, skipped, or wrong answers will display.</h6>
-
+![Game Over Screen](assets/images/trivia_screen.png)
+###### After submitting, the total number of correctly guessed, skipped, or wrong answers will display.
 
 
 ### Process of the Game
